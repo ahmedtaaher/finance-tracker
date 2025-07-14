@@ -109,6 +109,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-bootstrap-views (1.1.0)
     dotenv (3.1.8)
     drb (2.2.3)
     ed25519 (1.4.0)
@@ -361,6 +362,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  devise-bootstrap-views
   importmap-rails
   jbuilder
   kamal
