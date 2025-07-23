@@ -12,4 +12,7 @@ class Stock < ApplicationRecord
         last_price: quote["05. price"].to_f
       )
   end
+  def self.check_db(symbol)
+    where(ticker: symbol).first
+  end
 end

@@ -1,7 +1,10 @@
 <% if @stock %>
-  <div class="card card-header results-block my-3 p-3">
-    <strong>Symbol: </strong> <%= @stock.ticker %>
-    <strong>Name: </strong> <%= @stock.name %>
-    <strong>Price: </strong> <%= @stock.last_price %>
+<div class="card card-header results-block my-3 p-3">
+  <div class="d-flex align-items-center flex-wrap gap-2">
+    <strong>Symbol:</strong> <%= @stock.ticker %>
+    <strong>Name:</strong> <%= @stock.name %>
+    <strong>Price:</strong> <%= @stock.last_price %>
+    <%= button_to "Add to portfolio", user_stocks_path(user: current_user, ticker: @stock.ticker), class: "btn btn-sm btn-success ms-2", method: :post %>
   </div>
+</div>
 <% end %>

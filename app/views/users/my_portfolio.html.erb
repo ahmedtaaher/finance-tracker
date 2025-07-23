@@ -1,7 +1,7 @@
 <h1>My Portfolio</h1>
 <div class="search-area">
   <h3>Search Stocks</h3>
-  <%= form_tag search_stock_path, remote: true, method: :get do %>
+  <%= form_with url: search_stock_path, method: :get, local: false, data: { turbo: false } do %>
     <div class="form-group row">
       <div class="col-sm-9">
         <%= text_field_tag :stock, params[:stock], class: "form-control form-control-lg", placeholder: "Enter stock ticker symbol", autofocus: true %>
@@ -14,8 +14,9 @@
     </div>
   <% end %>
 </div>
-<div >
-<%= render "users/result" %>
+<div id="results">
+  <%= render "users/result" %>
+</div>
 <% if !@tracked_stocks.empty? %>
   <%= render "stocks/list" %>
 <% end %>
