@@ -29,6 +29,9 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto mx-3">
+                    <li class="nav-item user-name">
+                      <%= current_user.full_name %>
+                    </li>
                     <li class="nav-item">
                         <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "btn btn-xs btn-danger" %>
                     </li>
