@@ -1,0 +1,22 @@
+<h1>Friends</h1>
+<div class="search-area mb-3">
+  <h3>Search Friends</h3>
+  <%= form_with url: search_friend_path, method: :get, local: false, data: { turbo: false } do %>
+    <div class="form-group row">
+      <div class="col-sm-9">
+        <%= text_field_tag :friend, params[:friend], class: "form-control form-control-lg", placeholder: "Name or email", autofocus: true %>
+      </div>
+      <div class="col-sm-3">
+        <%= button_tag type: :submit, class: "btn btn-success" do %>
+          <%= "Search" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div id="friend-results">
+  <%= render "users/friend" %>
+</div>
+<% if !@friends.empty? %>
+  <%= render "friends/list" %>
+<% end %>
